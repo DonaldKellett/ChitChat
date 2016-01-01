@@ -1,0 +1,30 @@
+/*
+  ChitChat
+  An easy-to-setup Chat Platform proudly presented to you by DonaldKellett (https://github.com/DonaldKellett)
+  (c) Donald Leung.  All rights reserved.
+  MIT Licensed
+*/
+.js-comment {
+  color: #666;
+}
+.js-str {
+  color: lime;
+}
+.js-operator, .js-built-in-func {
+  color: cyan;
+}
+.js-keywd {
+  color: magenta;
+}
+.js-bool, .js-int, .js-float, .js-built-in-property {
+  color: orange;
+}
+.js-obj {
+  color: rgb(255, 206, 5);
+}
+.js-method-declare, .js-obj-construct {
+  color: blue;
+}
+.js-this-keywd {
+  color: red;
+}

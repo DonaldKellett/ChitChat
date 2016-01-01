@@ -1,0 +1,296 @@
+/*
+  ChitChat
+  An easy-to-setup Chat Platform proudly presented to you by DonaldKellett (https://github.com/DonaldKellett)
+  (c) Donald Leung.  All rights reserved.
+  MIT Licensed
+*/
+
+/* Code Styles */
+@import url('html-styles.css');
+@import url('css-styles.css');
+@import url('js-styles.css');
+
+* {
+  background-color: black;
+  color: lime;
+  font-family: "Courier New", monospace;
+}
+h2 {
+  font-size: 42px;
+  font-weight: bolder;
+}
+h3 {
+  font-size: 30px;
+}
+h4 {
+  font-size: 27px;
+}
+h5 {
+  font-size: 24px;
+}
+h6 {
+  font-size: 21px;
+}
+#header {
+  position: fixed;
+  margin: -20px -5px -5px -5px;
+  width: 100%;
+  z-index: 1; /* Overlap other divs */
+  border-bottom: 1px dotted lime;
+  display: block;
+}
+#logo {
+  float: left;
+  width: 75%;
+  display: inline;
+}
+#logo h1 a {
+  font-size: 30px;
+  text-decoration: none;
+  display: inline;
+  text-transform: lowercase;
+}
+#nav {
+  float: right;
+  text-align: right;
+  width: 25%;
+  display: inline;
+  margin: -50px 5px 5px 5px;
+  font-weight: bold;
+}
+
+#nav a {
+  font-size: 20px;
+  text-decoration: none;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
+}
+#nav a:hover {
+  color: #fff;
+}
+
+#main {
+  margin-top: 50px;
+  position: absolute;
+  width: 100%;
+  display: block;
+}
+
+#banner {
+  text-align: center;
+  width: 100%;
+}
+#banner h2 {
+  font-size: 60px;
+}
+#banner #motto {
+  font-size: 24px;
+}
+.row {
+  width: 100%;
+}
+
+/* My Grid (Twelve Units - 100% width) */
+.one {width: 8.333333333333%; float: left;}
+.two {width: 16.666666666666%; float: left;}
+.three {width: 25%; float: left;}
+.four {width: 33.333333333333%; float: left;}
+.five {width: 41.666666666666%; float: left;}
+.six {width: 50%; float: left;}
+.seven {width: 58.333333333333%; float: left;}
+.eight {width: 66.666666666666%; float: left;}
+.nine {width: 75%; float: left;}
+.ten {width: 83.333333333333%; float: left;}
+.eleven {width: 91.666666666666%; float: left;}
+.twelve {width: 100%; float: left;}
+.full {width: 100%; float: left;}
+
+#footer {
+  display: block;
+  padding-top: 10px;
+}
+#copyright {
+  text-align: center;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+a {
+  text-decoration: underline;
+  color: lime;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
+}
+a:hover {
+  color: white;
+}
+
+.button {
+  padding: 6px 10px 6px 10px;
+  text-decoration: none;
+  color: lime;
+  border: 1px solid lime;
+  -webkit-transition: border 0.5s;
+  -moz-transition: border 0.5s;
+  -o-transition: border 0.5s;
+  transition: color 0.5s, border 0.5s;
+}
+.button:hover {
+  color: white;
+  border: 1px solid #fff;
+}
+.cyan {
+  color: cyan;
+  border-color: cyan;
+}
+.magenta {
+  color: magenta;
+  border-color: magenta;
+}
+.yellow {
+  color: yellow;
+  border-color: yellow;
+}
+.rounded {
+  border-radius: 5px;
+}
+.fit {
+  display: block;
+  text-align: center;
+}
+
+code {
+  font-family: monospace;
+  border-radius: 5px;
+  border: 1px solid white;
+  color: white;
+  padding: 2px 5px 1px 5px;
+  font-size: 16px;
+}
+
+blockquote {
+  border-left: 5px solid lime;
+  padding-left: 10px;
+}
+
+pre code {
+  font-family: monospace;
+  word-wrap: break-word;
+  display: block;
+}
+
+/* HTML Form Styling */
+
+input[type="text"], input[type="password"], input[type="email"], select, textarea {
+  display: block;
+  width: 95%;
+  height: 18px;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
+  border-color: lime;
+  background-color: #333;
+  border: 1px solid lime;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+}
+
+select {
+  width: 98.25%;
+  font-size: 1em;
+}
+
+input[type="submit"], input[type="reset"] {
+  padding: 6px 10px 6px 10px;
+  text-decoration: none;
+  color: lime;
+  border: 1px solid lime;
+  -webkit-transition: border 0.5s;
+  -moz-transition: border 0.5s;
+  -o-transition: border 0.5s;
+  transition: color 0.5s, border 0.5s;
+  font-size: 16px;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover {
+  color: white;
+  border: 1px solid #fff;
+}
+
+/*
+  HTML Form Styling (when clicked / in focus)
+  Credits: https://css-tricks.com/snippets/css/glowing-blue-input-highlights/
+  Without this source, I would not be able to change the color of the glow when form elements are clicked
+*/
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, select:focus, textarea:focus {
+  box-shadow: 0 0 10px lime;
+}
+
+textarea {
+  resize: none;
+  height: 300px;
+  width: 97.5%;
+}
+
+@media screen and (max-width: 1150px) {
+  #logo {width: 65%;}
+  #nav {width: 35%;}
+}
+
+@media screen and (max-width: 850px) {
+  #logo {width: 60%;}
+  #nav {width: 40%;}
+}
+
+@media screen and (max-width: 750px) {
+  #header {
+    margin: -25px -5px -5px -5px;
+  }
+  #logo {
+    width: 50%;
+  }
+  #logo h1 a {
+    font-size: 24px;
+    text-decoration: none;
+  }
+  #nav {
+    width: 50%;
+    margin: -47px 5px 5px 5px;
+  }
+  #nav a {
+    font-size: 18px;
+  }
+
+  /* Resize Grid - All elements to width: 100%; */
+  .one {width: 100%; float: left;}
+  .two {width: 100%; float: left;}
+  .three {width: 100%; float: left;}
+  .four {width: 100%; float: left;}
+  .five {width: 100%; float: left;}
+  .six {width: 100%; float: left;}
+  .seven {width: 100%; float: left;}
+  .eight {width: 100%; float: left;}
+  .nine {width: 100%; float: left;}
+  .ten {width: 100%; float: left;}
+  .eleven {width: 100%; float: left;}
+  .twelve {width: 100%; float: left;}
+  .full {width: 100%; float: left;}
+}
+
+@media screen and (max-width: 550px) {
+  #logo {width: 45%;}
+  #nav {width: 55%;}
+}
+
+@media screen and (max-width: 500px) {
+  #logo {width: 32.5%;}
+  #nav {width: 67.5%;}
+}

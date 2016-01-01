@@ -1,0 +1,18 @@
+ChitChat
+An easy-to-setup Chat Platform proudly presented to you by DonaldKellett (https://github.com/DonaldKellett)
+(c) Donald Leung.  All rights reserved.
+MIT Licensed
+
+SQL "CREATE TABLE" Statements
+-----------------------------
+# Note: The "email" column is optional and does not have to be filled in, I just added it there so if you want to you could collect the user's email
+CREATE TABLE accounts (
+	id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    username TEXT NOT NULL,
+    password TEXT NOT NULL,
+    login_id INTEGER NOT NULL,
+    email TEXT,
+    rank INTEGER NOT NULL,
+    status TEXT NOT NULL, # Either "online" or "offline" - crucial to chat app
+    date TIMESTAMP
+);

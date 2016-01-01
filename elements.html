@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!--
+  ChitChat
+  An easy-to-setup Chat Platform proudly presented to you by DonaldKellett (https://github.com/DonaldKellett)
+  (c) Donald Leung.  All rights reserved.
+  MIT Licensed
+-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Elements - ChitChat by DonaldKellett</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <header id="header">
+        <div id="logo">
+          <h1><a href="#">ChitChat</a></h1>
+        </div>
+        <div id="nav">
+          <a href="index.html">Home</a> |
+          <a href="generic.html">Generic</a> |
+          <a href="elements.html">Elements</a>
+        </div>
+      </header>
+      <div id="main">
+        <h2>Elements</h2>
+        <div class="row">
+          <div class="full">
+            <h3>Text</h3>
+            This is <b>bold</b> and this is <strong>strong</strong>.  This is <i>italic</i> and this is <em>emphasized</em>.  This is <sup>superscript</sup> and this is <sub>subscript</sub>.  This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>.  Finally, this is a <a href="#">link</a>.
+          </div>
+        </div>
+        <div class="row">
+          <div class="full">
+            <h3>Blockquote</h3>
+            <blockquote>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </blockquote>
+          </div>
+        </div>
+        <div class="row">
+          <h3>Preformatted</h3>
+          <div class="full">
+            <h4>General</h4>
+            <pre><code>car.destination = "home";
+car.initializeMeter();
+car.startEngine();
+while (car.getCurrentLocation() !== car.destination) {
+  car.drive();
+  while (car.detectObstacles() === true) {
+    car.honk();
+  }
+}
+console.log("It took " + car.getDistanceIn("km") + " kilometres to reach " + car.destination + ".");</code></pre>
+          </div>
+        </div>
+        <div class="row">
+          <div class="four">
+            <h4>HTML</h4>
+            <pre><code>&lt;!DOCTYPE html&gt;
+<span class="comment">&lt;!-- This is a comment --&gt;</span>
+&lt;<span class="tag">html</span>&gt;
+  &lt;<span class="tag">head</span>&gt;
+    &lt;<span class="tag">meta</span> <span class="attr-name">charset</span>=<span class="attr-value">"utf-8"</span> /&gt;
+    &lt;<span class="tag">title</span>&gt;Lorem Ipsum Dolor&lt;/<span class="tag">title</span>&gt;
+  &lt;/<span class="tag">head</span>&gt;
+  &lt;<span class="tag">body</span>&gt;
+    &lt;<span class="tag">h2</span>&gt;More HTML Styling&lt;/<span class="tag">h2</span>&gt;
+    &lt;<span class="tag">p</span>&gt;Apart from tag, comment, and attribute name/value pair styling, you can also style HTML special characters like this: <span class="htmlspecialchar">&amp;amp;</span>&lt;/<span class="tag">p</span>&gt;
+  &lt;/<span class="tag">body</span>&gt;
+&lt;/<span class="tag">html</span>&gt;</code></pre>
+          </div>
+          <div class="four">
+            <h4>CSS</h4>
+            <pre><code><span class="css-comment">/* <!-- Actually using a span with class="comment" will do but I wanted to make a distinction between HTML comments and other comments :) -->
+  This is a comment
+*/</span>
+<span class="command">@import</span> <span class="css-func">url</span>(<span class="css-str">'another-stylesheet.css'</span>);
+<span class="tag-name">*<!-- Actually, here, just using a span with class="tag" would do but I wanted to make the distinction between HTML and CSS --></span> {
+  font-size: <span class="num-val">16px</span>;
+  font-family: <span class="css-keywd">monospace</span>;
+  color: <span class="css-keywd">lime</span>;
+  background-color: <span class="css-keywd">black</span>;
+}
+<span class="tag-name">h1</span> {
+  color: <span class="css-func">rgb</span>(<span class="css-purenum">255</span>, <span class="css-purenum">0</span>, <span class="css-purenum">0</span>);
+}
+<span class="css-id">#custom-id</span> {
+  border-radius: <span class="num-val">5px</span>;
+  border: <span class="num-val">1px</span> solid <span class="css-keywd">lime</span>;
+}
+<span class="css-class">.custom-class</span> {
+  <span class="css-comment">/* Add some CSS code here */</span>
+}
+
+<span class="css-comment">/* An extreme example of utilizing the built-in CSS code display styling */</span>
+<span class="command">@media</span> <span class="css-keywd">screen</span> and (max-width: <span class="num-val">750px</span>) {
+  <span class="css-id">#nav</span> <span class="command">&gt;</span> <span class="tag-name">p</span> {
+    <span class="comment">/* Give special styling effects for paragraph tags that are direct children of the navigation bar */</span>
+    text-decoration: <span class="css-keywd">underline</span>;
+    font-weight: <span class="css-keywd">bolder</span>;
+    font-style: <span class="css-keywd">italic</span>;
+    border: <span class="num-val">2px</span> dotted <span class="hex-hashtag">#</span><span class="css-purenum">666</span>;
+  }
+}</code></pre>
+          </div>
+          <div class="four">
+            <h4>JS</h4>
+            <pre><code><span class="js-comment">// This is a comment</span>
+
+<span class="js-comment">/*
+ * This is a multi-line JS comment
+ * How cool is that?
+ */</span>
+car.destination <span class="js-operator">=</span> <span class="js-str">"home"</span>;
+car.initializeMeter();
+car.startEngine();
+<span class="js-keywd">while</span> (car.getCurrentLocation() <span class="js-operator">!==</span> car.destination) {
+  car.drive();
+  <span class="js-keywd">while</span> (car.detectObstacles() <span class="js-operator">===</span> <span class="js-bool">true</span>) {
+    car.honk();
+  }
+}
+<span class="js-obj">console</span>.<span class="js-built-in-func">log</span>(<span class="js-str">"It took "</span> <span class="js-operator">+</span> car.getDistanceIn(<span class="js-str">"km"</span>) <span class="js-operator">+</span> <span class="js-str">" kilometres to reach "</span> <span class="js-operator">+</span> car.destination <span class="js-operator">+</span> <span class="js-str">"."</span>);
+
+<span class="js-comment">// Some more Javascript code</span>
+
+<span class="js-keywd">var</span> integer <span class="js-operator">=</span> <span class="js-int">10</span>;
+<span class="js-keywd">var</span> string <span class="js-operator">=</span> <span class="js-str">"Hello World"</span>;
+<span class="js-keywd">var</span> boolean <span class="js-operator">=</span> <span class="js-bool">false</span>;
+<span class="js-keywd">var</span> array <span class="js-operator">=</span> [<span class="js-int">10</span>, <span class="js-float">3.14</span>, <span class="js-str">"Goodbye World"</span>, <span class="js-bool">true</span>];
+<span class="js-keywd">var</span> objLiteralNotation <span class="js-operator">=</span> {
+  property: <span class="js-str">"value"</span>,
+  <span class="js-method-declare">method</span>: <span class="js-keywd">function</span> (param) {
+    void(<span class="js-int">0</span>);
+  }
+};
+<span class="js-keywd">function</span> <span class="js-obj-construct">ObjectConstruct</span>(argument) {
+  <span class="js-this-keywd">this</span>.value <span class="js-operator">=</span> argument;
+}
+<span class="js-keywd">var</span> newObj <span class="js-operator">=</span> new <span class="js-obj">ObjectConstruct</span>(<span class="js-obj">Math</span>.<span class="js-built-in-property">PI</span>);</code></pre>
+          </div>
+        </div>
+        <div class="row">
+          <h3>Lists</h3>
+          <div class="six">
+            <h4>Unordered</h4>
+            <ul>
+              <li>Lorem Ipsum</li>
+              <li>Magna Nullam</li>
+              <li>Magna Aliquam</li>
+              <li>Sed Feugiat</li>
+            </ul>
+          </div>
+          <div class="six">
+            <h4>Ordered</h4>
+            <ol>
+              <li>Item 1</li>
+              <li>Item 2</li>
+              <li>Item 3</li>
+              <li>Item 4</li>
+              <li>Item 5</li>
+              <li>Item 6</li>
+            </ol>
+          </div>
+        </div>
+        <div class="row">
+          <h3>Buttons</h3>
+          <div class="full">
+            <p>
+              <a href="#" class="button">Default</a> <a href="#" class="button cyan">Cyan</a> <a href="#" class="button magenta">Magenta</a> <a href="#" class="button yellow">Yellow</a>
+            </p>
+            <p>
+              <a href="#" class="button rounded">Rounded</a> <a href="#" class="button rounded cyan">Rounded Cyan</a> <a href="#" class="button rounded magenta">Rounded Magenta</a> <a href="#" class="button rounded yellow">Rounded Yellow</a>
+            </p>
+            <p>
+              <a href="#" class="button fit">Fit</a>
+              <a href="#" class="button fit cyan">Fit Cyan</a>
+              <a href="#" class="button fit magenta">Fit Magenta</a>
+              <a href="#" class="button fit yellow">Fit Yellow</a>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <h3>Table</h3>
+          <div class="full">
+            <table>
+              <thead>
+                <tr>
+                  <th>
+                    Category 1
+                  </th>
+                  <th>
+                    Category 2
+                  </th>
+                  <th>
+                    Category 3
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    Item 1
+                  </td>
+                  <td>
+                    Item 2
+                  </td>
+                  <td>
+                    Item 3
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Item 4
+                  </td>
+                  <td>
+                    Item 5
+                  </td>
+                  <td>
+                    Item 6
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Item 7
+                  </td>
+                  <td>
+                    Item 8
+                  </td>
+                  <td>
+                    Item 9
+                  </td>
+                </tr><tr>
+                  <td>
+                    Item 10
+                  </td>
+                  <td>
+                    Item 11
+                  </td>
+                  <td>
+                    Item 12
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="row">
+          <h3>Form</h3>
+          <form action="#" method="post">
+            <div class="row">
+              <div class="six">
+                <p>
+                  <input type="text" name="name" placeholder="Name" value="" />
+                </p>
+              </div>
+              <div class="six">
+                <p>
+                  <input type="email" name="email" placeholder="Email Address" value="" />
+                </p>
+              </div>
+              <div class="twelve">
+                <p>
+                  <select name="category">
+                    <option value="">- Please select a category -</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Gaming">Gaming</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </p>
+              </div>
+              <div class="twelve">
+                <p>
+                  <textarea name="message" placeholder="Message"></textarea>
+                </p>
+              </div>
+              <div class="twelve">
+                <p>
+                  <input type="submit" value="Send Message" /> <input type="reset" value="Reset" />
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+        <hr />
+        <footer id="footer">
+          <div class="four">
+            <h3>Blurb</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+          <div class="four">
+            <h3>Links</h3>
+            <ul>
+              <li><a href="#">Lorem Ipsum</a></li>
+              <li><a href="#">Magna Aliquam</a></li>
+              <li><a href="#">Sed Feugiat</a></li>
+              <li><a href="#">Magna Nullam</a></li>
+              <li><a href="#">Ultricies Aliquam</a></li>
+            </ul>
+          </div>
+          <div class="four">
+            <h3>Button</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>
+              <a href="#" class="button">Learn More</a>
+            </p>
+          </div>
+          <div id="copyright">
+            &copy; Untitled.  All rights reserved. | Credits: <a href="https://github.com/DonaldKellett">DonaldKellett</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+/*
+  ChitChat
+  An easy-to-setup Chat Platform proudly presented to you by DonaldKellett (https://github.com/DonaldKellett)
+  (c) Donald Leung.  All rights reserved.
+  MIT Licensed
+*/
+
+.tag {
+  color: rgb(255, 117, 117);
+}
+.attr-name {
+  color: orange;
+}
+.attr-value {
+  color: lime;
+}
+.comment {
+  color: #666;
+}
+.htmlspecialchar {
+  color: magenta;
+}
