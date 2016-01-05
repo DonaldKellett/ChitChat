@@ -240,6 +240,23 @@ textarea {
   width: 97.5%;
 }
 
+#reset {
+  color: red;
+  border: 1px solid red;
+  -webkit-transition: color 0.5s, border 0.5s;
+  -moz-transition: color 0.5s, border 0.5s;
+  -o-transition: color 0.5s, border 0.5s;
+  transition: color 0.5s, border 0.5s;
+}
+#reset:hover {
+  color: magenta;
+  border: 1px solid magenta;
+}
+
+#global-chat-content {
+  margin-top: 20px;
+}
+
 @media screen and (max-width: 1150px) {
   #logo {width: 65%;}
   #nav {width: 35%;}

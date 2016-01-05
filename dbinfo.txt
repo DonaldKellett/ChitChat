@@ -16,3 +16,10 @@ CREATE TABLE accounts (
     status TEXT NOT NULL, # Either "online" or "offline" - crucial to chat app
     date TIMESTAMP
 );
+
+CREATE TABLE global_chat (
+	id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    username TEXT NOT NULL,
+    content TEXT NOT NULL,
+    date TIMESTAMP
+);
