@@ -23,3 +23,10 @@ CREATE TABLE global_chat (
     content TEXT NOT NULL,
     date TIMESTAMP
 );
+
+CREATE TABLE chats (
+	id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    user1 TEXT NOT NULL,
+    user2 TEXT NOT NULL,
+    chat TEXT
+);
