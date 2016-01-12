@@ -12,7 +12,7 @@ require 'vars.php';
 <html>
   <head>
     <meta charset="utf-8">
-    <title>My Chats - ChitChat by DonaldKellett</title>
+    <title>Moderate Chats - ChitChat by DonaldKellett</title>
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body>
@@ -23,48 +23,41 @@ require 'vars.php';
           $verify_acc = $conn->query("SELECT * FROM accounts WHERE username = " . htmlspecialchars_decode("&quot;") . $_COOKIE['username'] . htmlspecialchars_decode("&quot;") . " AND login_id = " . $_COOKIE['login_id']);
           if ($verify_acc->num_rows == 1) {
             while ($my_acc = $verify_acc->fetch_assoc()) {
-              if ($my_acc['rank'] > 1) { ?>
-                <h2>My Chats</h2>
+              if ($my_acc['rank'] > 2) { ?>
+                <h2>Moderate All Chats</h2>
                 <p>
-                  Click on one of your chats to start or resume that chat!
+                  Below are all the chats existing in the database.  If you find any form of inappropriate content in one (or more) of the chats, please demote/ban the user(s) involved depending on the severity of the breach.
+                </p>
+                <p>
+                  Please note that the Global Community Chat is not involved here because you can easily moderate the Global Chat by entering it.
                 </p>
                 <?php
-                $my_chats = $conn->query("SELECT * FROM chats WHERE user1 = " . htmlspecialchars_decode("&quot;") . $_COOKIE['username'] . htmlspecialchars_decode("&quot;") . " OR user2 = " . htmlspecialchars_decode("&quot;") . $_COOKIE['username'] . htmlspecialchars_decode("&quot;") . " ORDER BY id DESC;");
-                if ($my_chats->num_rows == 0) { ?>
-                  <p style="font-style:italic;font-size:smaller;">
-                    You currently have no chats.
-                  </p>
-                <?php } else {
+                $all_chats = $conn->query("SELECT * FROM chats ORDER BY id DESC");
+                if ($all_chats->num_rows > 0) {
                   ?>
                   <table>
                     <thead>
                       <tr>
-                        <th>
-                          ID
-                        </th>
                         <th colspan="2">
-                          Chat Members
+                          Users Involved
                         </th>
                         <th>
-                          Actions
+                          Chat HTML
                         </th>
                       </tr>
                     </thead>
                     <tbody>
-                      <?php while ($my_chat = $my_chats->fetch_assoc()) {
+                      <?php while ($individual_chat = $all_chats->fetch_assoc()) {
                         ?>
                         <tr>
                           <td>
-                            <?php echo $my_chat['id']; ?>
+                            <?php echo $individual_chat['user1']; ?>
                           </td>
                           <td>
-                            <?php echo $my_chat['user1']; ?>
+                            <?php echo $individual_chat['user2']; ?>
                           </td>
                           <td>
-                            <?php echo $my_chat['user2']; ?>
-                          </td>
-                          <td>
-                            <a href="chat.php?id=<?php echo $my_chat['id']; ?>">Enter Chat</a>
+                            <?php echo htmlspecialchars($individual_chat['chat']); ?>
                           </td>
                         </tr>
                         <?php
@@ -72,28 +65,33 @@ require 'vars.php';
                     </tbody>
                   </table>
                   <?php
-                }
-                ?>
-              <?php } else { ?>
-                <h2>Access Denied</h2>
+                } else { ?><p style="font-style:italic;font-size:small;">There are currently no chats.</p><?php }
+              } else { ?>
+                <h2>Unauthorised</h2>
                 <p>
-                  Sorry, banned users (i.e. YOU) cannot have access to your chats.
+                  Sorry, you are not authorised to access the contents of this page.
                 </p>
                 <p>
-                  <a href="index.php" class="button">Return</a>
+                  <a href="index.php" class="button rounded">Return</a>
                 </p>
               <?php }
             }
           } else { ?>
             <h2>Invalid Cookies Detected</h2>
             <p>
-              Oops, it seems that you have not logged in properly.  Please <a href="logout.php">log out</a> and try logging in again properly.
+              Sorry, invalid cookies were detected in your browser.  Please log out and try again.
+            </p>
+            <p>
+              <a href="logout.php" class="button rounded">Log Out</a>
             </p>
           <?php }
         } else { ?>
           <h2>Login Required</h2>
           <p>
-            Sorry, you have to be <a href="login.php">logged in</a> in order to view the contents of this page.
+            You must be logged in in order to moderate all chats.
+          </p>
+          <p>
+            <a href="login.php" class="button rounded">Log In</a>
           </p>
         <?php } ?>
         <hr />
